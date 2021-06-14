@@ -62,7 +62,7 @@
 
 * Language has long distance effects, therefore large n required. 
   > The <span color="red">lecture/s</span> that took place last week <span color="red">was/were</span> on preprocessing
-  > The "was/were" here is mentioning "lecture/s" which is 6 words ahead. Therefore need a 6-grams
+  * The "was/were" here is mentioning "lecture/s" which is 6 words ahead. Therefore need a 6-grams
     
 * Resulting probabilities are often very small
     * Possible solution: Use log probability to avoid numerical underflow
@@ -81,8 +81,9 @@
 * Must be the case that <img src="https://render.githubusercontent.com/render/math?math=P(everything) = 1" alt="">
 * Many different kinds of smoothing
     * [Laplacian(add-one) smoothing](#add-one)
-    * Add-k smoothing
-    * Absolute discounting
+    * [Add-k smoothing](#add-k)
+    * [Absolute discounting](#absolute_discount)
+    * [Katz Backoff](#katz)
     * Kneser-Ney
 
 <h3 id="add-one">Laplacian(add-one) smoothing</h3>
@@ -93,3 +94,23 @@
   
 * For bigram models:
   <img src="https://render.githubusercontent.com/render/math?math=P_{add1}(w_i|w{i-1}) = \frac{C(w_{i-1}, w_i)%2B1}{C(w_{i-1})%2B|V|}" alt="">
+
+<h3 id="add-k">Add-k smoothing</h3>
+
+* Adding one is often too much. Instead, add a fraction k.
+* Also called Lidstone Smoothing
+  <img src="https://render.githubusercontent.com/render/math?math=P_{addk}(w_i|w_{i-1}, w_{i-2}) = \frac{C(w_{i-2}, w_{i-1}, w_i)%2Bk}{C(w_{i-2}, w_{i-1})%2Bk|V|}" alt="">
+
+* Have to choose k
+
+<h3 id="absolute_discount">Absolute Discounting</h3>
+
+* Borrows a fixed probability mass from observed n-gram counts
+* Redistributes it to unseen n-grams
+
+<h3 id="katz">Katz Backoff</h3>
+
+* Absolute discounting redistributes the probability mass equally for all unseen n-grams
+* Katz Backoff: redistributes the mass based on a lower order model (e.g. Unigram)
+  > <img src="004.png" alt="unigram_example" width=1552 height=560>
+
