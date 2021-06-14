@@ -25,14 +25,17 @@
   
 ### The Markov Assumption
 
-* <img src="https://render.githubusercontent.com/render/math?math=P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \ldots P(w_m|w_1, \ldots, w_{m-1})"> is still intractable, so make a simplifying assumption:
-    <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_1, \ldots, w_{i-1}) \approx P(w_i|w_{i-n+1}, \ldots, w_{i-1})">
+* <img src="https://render.githubusercontent.com/render/math?math=P(w_1)P(w_2|w_1)P(w_3|w_1, w_2) \ldots P(w_m|w_1, \ldots, w_{m-1})" alt=""> is still intractable, so make a simplifying assumption:
+    <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_1, \ldots, w_{i-1}) \approx P(w_i|w_{i-n+1}, \ldots, w_{i-1})" alt="">
 * For some small <i>n</i>: 
   
     * When n = 1, it is a unigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i)">
-    <img src="001.png" alt="unigram_example">
+        <img src="001.png" alt="unigram_example" height=50% width=50%>
+      
     * When n = 2, it is a bigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i|w_{i-1})">
-    <img src="002.png" alt="bigram_example">
+        <img src="002.png" alt="bigram_example" height=50% width=50%>
+      
     * When n = 3, it is a trigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i|w_{i-2}, w_{i-1})">
+        <img src="003.png" alt="trigram_example height=50% width=50%>
 
 
