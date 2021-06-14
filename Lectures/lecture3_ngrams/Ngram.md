@@ -30,12 +30,12 @@
 * For some small <i>n</i>: 
   
     * When n = 1, it is a unigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i)">
-      > <img src="001.png" alt="unigram_example" | width=50%| height=50%>
+      > <img src="001.png" alt="unigram_example" width="50%" height="50%">
       
     * When n = 2, it is a bigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i|w_{i-1})">
-      > <img src="002.png" alt="bigram_example" | width=50% | height=50%>
+      > <img src="002.png" alt="bigram_example"  width=290 height=138>
       
     * When n = 3, it is a trigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i|w_{i-2}, w_{i-1})">
-      > <img src="003.png" alt="trigram_example" | width=50% | height=50%>
+      > <img src="003.png" alt="trigram_example" width=302 height=150>
 
 
