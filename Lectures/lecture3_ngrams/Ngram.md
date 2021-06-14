@@ -160,9 +160,9 @@
 ### Generation
 
 * Given an initial word, draw the next word according to the probability distribution produced by the language model.
-* Include n-1 "<s>" tokens for n-gram model to provide context to generate first word
-    * Never generate <s>
-    * Generating </s> terminates the sequence
+* Include n-1 `<s>` tokens for n-gram model to provide context to generate first word
+    * Never generate `<s>`
+    * Generating `</s>` terminates the sequence
     
 * E.g.
 > <img src="007.gif" alt="generation" width=650 height=425>
