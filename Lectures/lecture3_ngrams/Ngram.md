@@ -38,4 +38,25 @@
     * When n = 3, it is a trigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_1, w_2, \ldots, w_m) = \prod_{i=1}^{m} P(w_i|w_{i-2}, w_{i-1})">
       > <img src="003.png" alt="trigram_example" width=290 height=140>
 
+### Maximum Likelihood Estimation
 
+* Estimate the probabilities based on counts in the corpus:
+    * For unigram models:
+      <img src="https://render.githubusercontent.com/render/math?math=P(w_i) = \frac{C(w_i)}{M}" alt="">
+      
+    * For bigram models:
+      <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_{i-1}) = \frac{C(w_{i-1}, w_i)}{C(w_{i-1}})" alt="">
+
+    * For n-gram models generally:
+      <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_{i-n+1}, \ldots, w_{i-1}) = \frac{C(w_{i-n+1}, \ldots, w_i)}{C(w_{i-n+1}, \ldots, w_{i-1})}" alt="">
+
+### Book-ending Sequences
+
+* Special tags used to denote start and end of sequence:
+    * `<s>` = sentence start
+    * `</s>` = sentence end
+    
+### Problems with N-gram models
+
+* Language has long distance effects, therefore large n required. 
+  > The <span color="red">lecture/s</span> that took place last week <span color="red">was/were</span> on preprocessing
