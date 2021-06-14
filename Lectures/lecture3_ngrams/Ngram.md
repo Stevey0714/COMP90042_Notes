@@ -112,5 +112,5 @@
 
 * Absolute discounting redistributes the probability mass equally for all unseen n-grams
 * Katz Backoff: redistributes the mass based on a lower order model (e.g. Unigram)
-  > <img src="004.png" alt="unigram_example" width=1552 height=560>
+  > <img src="004.png" alt="unigram_example" width=750 height=280>
 
