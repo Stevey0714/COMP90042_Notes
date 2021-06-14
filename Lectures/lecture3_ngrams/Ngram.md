@@ -84,7 +84,9 @@
     * [Add-k smoothing](#add-k)
     * [Absolute discounting](#absolute_discount)
     * [Katz Backoff](#katz)
-    * Kneser-Ney
+    * [Kneser-Ney](#kneser-ney)
+    * [Interpolation](#interpolation)
+    * [Interpolated Kneser-Ney Smoothing](#interpolated_kneser-ney)
 
 <h3 id="add-one">Laplacian(add-one) smoothing</h3>
 
@@ -112,5 +114,66 @@
 
 * Absolute discounting redistributes the probability mass equally for all unseen n-grams
 * Katz Backoff: redistributes the mass based on a lower order model (e.g. Unigram)
-  > <img src="004.png" alt="unigram_example" width=750 height=280>
+  > <img src="004.png" alt="katz" width=750 height=280>
+    
+* Problems: Has preference of high frequency words rather than true related words.
+    * E.g. I can't see without my reading _
+        * C(reading, glasses) = C(reading, Francisco) = 0
+        * C(Francisco) > C(glasses)
+        * Katz Backoff will give higher probability to Francisco 
+    
+<h3 id="knser-ney">Kneser-Ney Smoothing</h3>
 
+* Redistribute probability mass based on the versatility(广泛性) of the lower order n-gram.
+* Also called continuation probability
+* Versatility: 
+    * High versatility: co-occurs with a lot of unique words
+        * E.g. glasses: men's glasses, black glasses, buy glasses
+    * Low versatility: co-occurs with few unique words
+        * E.g. Francisco: San Francisco
+  
+> <img src="005.png" alt="kneser-ney" width=775 height=240>
+
+* Intuitively the numerator of P<sub>cont</sub> counts the number of unique w<sub>i-1</sub> that co-occurs with w<sub>i</sub>
+* High continuation counts for glasses and low continuation counts for Francisco
+
+<h3 id="interpolation">Interpolation</h3>
+
+* A better way to combine different orders of n-grams models
+* Weighted sum of probabilities across progressively shorter contexts
+* E.g. Interpolated trigram model:
+    > P<sub>IN</sub>(w<sub>i</sub>|w<sub>i-1</sub>, w<sub>i-2</sub>) = &#955;<sub>3</sub>P<sub>3</sub>(w<sub>i</sub>|w<sub>i-2</sub>, w<sub>i-1</sub>) + &#955;<sub>2</sub>P<sub>2</sub>(w<sub>i</sub>|w<sub>i-1</sub>) + &#955;<sub>1</sub>P<sub>1</sub>(w<sub>i</sub>)<br>&#955;<sub>3</sub> + &#955;<sub>2</sub> + &#955;<sub>1</sub> = 1
+  
+<h3 id="interpolated_kneser-ney">Interpolated Kneser-Ney Smoothing</h3>
+
+* Interpolation instead of back-off
+
+> <img src="006.png" alt="interpolated_kneser-ney" width=800 height=250>
+
+### In Practice
+
+* Commonly used Kneser-Ney language models use 5-grams as max order
+* Has different discount values for each n-gram order
+
+<h2 id="generating_language">Generating Language</h2>
+
+### Generation
+
+* Given an initial word, draw the next word according to the probability distribution produced by the language model.
+* Include n-1 "<s>" tokens for n-gram model to provide context to generate first word
+    * Never generate <s>
+    * Generating </s> terminates the sequence
+    
+* E.g.
+> <img src="007.gif" alt="generation" width=650 height=425>
+
+### How to select next word
+
+* Argmax: Takes highest probability word each turn.
+    * Greedy Search
+    
+* Beam Search Decoding:
+    * Keeps track of top-N highest probability words each turn 
+    * Select sequence of words that produce the best sentence probability
+    
+* Randomly samples from the distribution
