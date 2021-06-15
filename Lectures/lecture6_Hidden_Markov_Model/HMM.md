@@ -31,7 +31,7 @@
 
 * Parameters are individual probabilities:
     * Emission Probabilities (O): <img src="https://render.githubusercontent.com/render/math?math=P(w_i|t_i)" alt="">
-    * Transition Probabilities (A): <img src="https://render.githubusercontent.com/render/math?math=P(t_i|t_{i-1}" alt="">
+    * Transition Probabilities (A): <img src="https://render.githubusercontent.com/render/math?math=P(t_i|t_{i-1})" alt="">
     
 * Training uses Maximum Likelihood Estimation: Done by simply counting word frequencies according to their tags.
 
@@ -54,9 +54,13 @@
     > <img src="002.png" alt="generation" width=700 height=290>
   
 ### Making Predictions using HMM (Decoding)
+
 <img src="https://render.githubusercontent.com/render/math?math=\hat{t} = argmax_tP(w|t)P(t) = argmax_t\prod_{i=1}^{n}P(w_i|t_i)P(t_i|t_{i-1})" alt="">
-* Simple idea: For each word, take the tag that maximizes <img src="https://render.githubusercontent.com/render/math?math=P(w_i|t_i)P(t_i|t_{i-1})" alt="">. Do it left-to-right greedly
+
+* Simple idea: For each word, take the tag that maximizes <img src="https://render.githubusercontent.com/render/math?math=P(w_i|t_i)P(t_i|t_{i-1})" alt="">. Do it left-to-right greedily
+  
 * However this is wrong. The goal is to find <img src="https://render.githubusercontent.com/render/math?math=argmax_t" alt="">, not individual <img src="https://render.githubusercontent.com/render/math?math=argmax_{t_i}" alt=""> terms.
+  
 * Correct way: Consider all possible tag combinations, evaluate them, take the max.
 
 ### Viterbi Algorithm
