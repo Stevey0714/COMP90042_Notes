@@ -38,12 +38,12 @@
     * An unrolled RNN is a very deep neural network. But parameters are shared across all time steps
     * To train RNN, just need to create the unrolled computation graph given an input sequence and use backpropagation algorithm to compute gradients as usual.
     * This procedure is called backpropagation through time. 
-        > E.g of unrolled equation:
-        > <img src="007.png" alt="">
+        > E.g of unrolled equation:<br>
+        > <img src="007.png" alt=""><br>
       
 ### RNN Language Model:
 
-<img src="008.png" alt="">
+<img src="008.png" alt="" width=700 height=330>
 
 * <img src="https://render.githubusercontent.com/render/math?math=x_i" alt=""> is current word (e.g. `eats`) mapped to an embedding
   
@@ -55,7 +55,7 @@
     * Vocabulary: `[a, cow, eats, grass]`
     * Training example: `a cow eats grass`
     * Training process:
-      > <img src="009.png" alt=""><br>
+      > <img src="009.png" alt="" width=400 height=460><br>
       > <img src="https://render.githubusercontent.com/render/math?math=s_i = tanh(W_ss{i-1} %2B W_xx_i %2B b)" alt=""><br>
       > <img src="https://render.githubusercontent.com/render/math?math=y_i = softmax(W_ys_i)" alt="">
       
@@ -69,4 +69,4 @@
         * Total loss: <img src="https://render.githubusercontent.com/render/math?math=L_{total} = L_1 %2B L_2 %2B L_3" alt="">
     
 * Generation:
-  <img src="010.png" alt="">
+  > <img src="010.png" alt="" width=425 height=460>
