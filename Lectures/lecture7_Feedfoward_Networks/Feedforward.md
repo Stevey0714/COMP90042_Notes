@@ -79,3 +79,28 @@
     * If a dropout rate = 0.1, a random 10% of neurons now have 0 values
     > <img src="003.png" alt="" width=676 height=738>
     * Can apply dropout to any layer, but in practice, mostly to the hidden layers
+  
+<h2 id="fnn_application">Applications in NLP</h2>
+
+### Topic Classification
+
+* Given a document, classify it into a predefined set of topics. E.g. economy, politics, sports
+
+* Input: Bag-of-words 
+  > Example input:<br>
+  > <img src="004.png" alt="" width=640 height=220>
+  
+* Training: 
+  > Architecture:<br>
+  > <img src="005.png" alt="" width=620 height=702><br>
+  > Hidden Layers:<br>
+  > <img src="https://render.githubusercontent.com/render/math?math=\vec{h_1} = tanh(W_1\vec{x} %2B \vec{b_1})" alt=""><br>
+  > <img src="https://render.githubusercontent.com/render/math?math=\vec{h_2} = tanh(W_2\vec{h_1} %2B \vec{b_2})" alt=""><br>
+  > <img src="https://render.githubusercontent.com/render/math?math=\vec{y} = softmax(W_3\vec{h_2})" alt=""><br>
+  
+  * Randomly initialize `W` and `b`
+  * E.g:
+    > Input: <img src="https://render.githubusercontent.com/render/math?math=\vec{x} = [0, 2, 3, 0]" alt=""><br>
+    > Output: <img src="https://render.githubusercontent.com/render/math?math=\vec{y} = [0.1, 0.6, 0.3]" alt="">: Probability distribution over <img src="https://render.githubusercontent.com/render/math?math=C_1, C_2, C_3" alt=""><br>
+    > Loss: <img src="https://render.githubusercontent.com/render/math?math=L = -log(0.1)" alt=""> if true label is <img src="https://render.githubusercontent.com/render/math?math=C_1" alt=""><br>
+  
