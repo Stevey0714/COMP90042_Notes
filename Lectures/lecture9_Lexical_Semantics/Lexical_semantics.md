@@ -34,8 +34,8 @@
     * Dictionary definitions are necessarily circular
     * Only useful if meaning is already understood
     * E.g
-        > red: n. the color of blood or a ruby
-        > blood: n. the red liquid that circulates in the heart, arteries, and veins of animals
+        > red: n. the color of blood or a ruby<br>
+        > blood: n. the red liquid that circulates in the heart, arteries, and veins of animals<br>
         > Here the word `red` is described by `blood` and `blood` is described by `red`. Therefore, to understand `red` and `blood` both meaning has to be understood
 
 * Their relationships with other words.
