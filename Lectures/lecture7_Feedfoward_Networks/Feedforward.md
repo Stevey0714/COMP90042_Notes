@@ -118,7 +118,7 @@
 ### Language Model as Classifiers
 
 * Language Models can be considered simple classifiers. 
-  * E.g. For a trigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_{i-2} = salt, w_{i-1} = and" alt=""> classifies the likely next word in a sequence, given `salt` and `and`
+  * E.g. For a trigram model: <img src="https://render.githubusercontent.com/render/math?math=P(w_i|w_{i-2} = salt, w_{i-1} = and)" alt=""> classifies the likely next word in a sequence, given `salt` and `and`
   
 * Feedforward Neural Network Language Model
   * Use neural network as a classifier to model
@@ -143,7 +143,7 @@
 * Lookup word embeddings (<img src="https://render.githubusercontent.com/render/math?math=W_1" alt="">) for `a`, `cow`, and `eats`
 
 * Concatenate them and feed it to the network: 
-  * <img src="https://render.githubusercontent.com/render/math?math=\vec{x} = \vec{v_a} \oplus \vec{v_cow} \oplus \vec{v_eats}" alt="">
+  * <img src="https://render.githubusercontent.com/render/math?math=\vec{x} = \vec{v_a} \oplus \vec{v_{cow}} \oplus \vec{v_{eats}}" alt="">
   
   * <img src="https://render.githubusercontent.com/render/math?math=\vec{h} = tanh(W_2\vec{x} %2B \vec{b_1})" alt="">
   
@@ -191,3 +191,24 @@
 
 * Example Architecture:
   > <img src="009.png" alt="" width=800 height=425><br>
+
+<h2 id="cnn">Convolutional Networks</h2>
+
+### Convolutional Networks
+
+* Commonly used in computer vision
+
+* Identify indicative local predictors
+
+* Combine them to produce a fixed-size representation
+
+### Convolutional Networks for NLP
+
+* Sliding window over sequence
+
+* W = convolution filter (linear transformation + tanh)
+
+* max-pool to produce a fixed-size representation
+
+* Example architecture:
+  > <img src="010.png" alt="" width=725 height=290><br>
