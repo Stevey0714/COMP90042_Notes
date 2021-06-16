@@ -27,7 +27,7 @@
 * RNN States:
     > <img src='003.png' alt="" width=420 height=275><br>
     > <img src="004.png" alt="" width=600 height=275><br>
-    > Activation: <img src="005.png" alt="" width=800 height=275><br>
+    > Activation: <br><img src="005.png" alt="" width=800 height=275><br>
     
 * RNN Unrolled:
     > <img src="006.png" alt="" width=750 height=360>
