@@ -162,3 +162,88 @@ function CYK-Parse(words, grammar) returns table
                     
     return table
 ```
+
+## Representing English with CFGs
+
+### From Toy Grammars to Real Grammars
+
+* Toy grammars with handful productions good for demonstration or extremely limited domains
+
+* For real texts, we need real grammars
+
+* Many thousands of production rules
+
+### Key Constituents in Penn Treebank
+
+* Sentence `S`
+* Noun phrase `NP`
+* Verb phrase `VP`
+* Prepositional phrase `PP`
+* Adjective phrase `AdjP`
+* Adverbial phrase `AdvP`
+* Subordinate clause `SBAR`
+* E.g. 
+    > <img src="007.png" alt="" width="600" height="175">
+  
+### Basic English Sentence Structures
+
+* Declarative sentences `S -> NP VP`
+    * The rat ate the cheese
+    
+* Imperative sentences `S -> VP`
+    * Eat the cheese
+    
+* Yes/no questions `S -> VB NP VP`
+    * Did the rat eat the cheese?
+    
+* Wh-subject questions `S -> WH VP`
+    * Who ate the cheese
+
+* Wh-object questions `S -> WH VB NP VP`
+    * What did the rat eat?
+    
+### English Noun Phrases
+
+* Pre-modifiers:
+    * DT, CD, ADJP, NNP, NN
+    * E.g.: `the two very best Philly cheese steaks`
+    
+* Post-modifiers:
+    * PP, VP, SBAR
+    * E.g.: `A delivery from Bob coming today that I don't want to miss`
+    
+### English Verb Phrases
+
+* Auxiliaries
+    * MD, AdvP, VB, TO
+    * E.g.: `should really have tried to wait`
+    
+* Arguments and adjuncts
+    * NP, PP, SBAR, VP, AdvP
+    * E.g.: `told him yesterday that I was ready`
+    
+### Other Constituents
+
+* Prepositional phrase:
+    * `PP -> IN NP`
+    * E.g.: `in the house`
+    
+* Adjective phrase:
+    * `AdjP -> (AdvP) JJ`
+    * E.g.: `really nice`
+    
+* Adverb phrase:   
+    * `AdvP -> (AdvP) RB`
+    * `not too well`
+    
+* Subordinate clause
+    * `SBAR -> (IN) S`
+    * E.g.: `since I came here`
+    
+* Coordination
+    * `NP -> NP CC NP; VP -> VP CC VP`
+    * E.g.: `Jack and Jill`
+    
+* Complex sentences
+    * `S -> S SBAR; S -> SBAR S`
+    * E.g.: `if he goes, I'll go`
