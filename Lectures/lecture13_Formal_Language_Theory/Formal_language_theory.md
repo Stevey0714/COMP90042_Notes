@@ -36,7 +36,7 @@
     * Describes what strings are part of the language. E.g. `0(0|1)*1`
     
 * Formally, a regular expression includes the following operations/definitions:
-    * Symbol drawn from alphabet &#931; `&Sigma;`
+    * Symbol drawn from alphabet &#931; 
     * Empty string &#949;
     * Concatenation of two regular expression `RS`
     * Alternation of two regular expressions `RIS`
@@ -46,7 +46,7 @@
 * E.g. 
     * Binary strings that start with 0 and ends with 1: `0(0|1)*1`
     * Even-length sequences from alphabet {a, b}: `((aa)|(ab)|(ba)|(bb))*`
-    * English sentences that start with wh-word and end in ?: `((what)|(where)|(why)|(which)|(whose)|(whom))&#931;*?`
+    * English sentences that start with wh-word and end in ?: ((what)|(where)|(why)|(which)|(whose)|(whom))&#931;*?
     
 * Properties of Regular Languages:
     * Closure: If we take regular languages L1 and L2 and merge them, is the resulting language regular?
@@ -65,7 +65,7 @@
 * Finite state acceptor (FSA) describes the computation involved for membership checking
 
 * FSA consists:
-    * Alphabet of input symbols `&#931;`
+    * Alphabet of input symbols &#931;
     * Set of states `Q`
-    * Start state `q0 &isin; Q`
+    * Start state q0 &isin; Q
     * 
