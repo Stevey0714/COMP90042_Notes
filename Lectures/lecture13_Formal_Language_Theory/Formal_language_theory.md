@@ -36,8 +36,8 @@
     * Describes what strings are part of the language. E.g. `0(0|1)*1`
     
 * Formally, a regular expression includes the following operations/definitions:
-    * Symbol drawn from alphabet &#931;
-    * Empty string `&#949;`
+    * Symbol drawn from alphabet &#931; `&Sigma;`
+    * Empty string &#949;
     * Concatenation of two regular expression `RS`
     * Alternation of two regular expressions `RIS`
     * Kleene star for 0 or more repeats `R*`
