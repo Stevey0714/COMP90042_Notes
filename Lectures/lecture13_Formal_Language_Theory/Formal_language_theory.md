@@ -46,7 +46,7 @@
 * E.g. 
     * Binary strings that start with 0 and ends with 1: `0(0|1)*1`
     * Even-length sequences from alphabet {a, b}: `((aa)|(ab)|(ba)|(bb))*`
-    * English sentences that start with wh-word and end in ?: ((what)|(where)|(why)|(which)|(whose)|(whom))&#931;*?
+    * English sentences that start with wh-word and end in ?: `((what)|(where)|(why)|(which)|(whose)|(whom))`&#931;`*?`
     
 * Properties of Regular Languages:
     * Closure: If we take regular languages L1 and L2 and merge them, is the resulting language regular?
@@ -67,5 +67,5 @@
 * FSA consists:
     * Alphabet of input symbols &#931;
     * Set of states `Q`
-    * Start state q0 &isin; Q
-    * 
+    * Start state `q0` &isin; `Q`
+    * Final states `F` &sube; `Q`
